@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UmutAğı | Afet Koordinasyon Platformu</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="offline-banner" class="offline-banner hidden">
+        <div class="pulse-icon"></div>
+        <span data-i18n="offline-msg">Şebeke bağlantısı koptu. Çevrimdışı moddasınız. Son güncel veriler
+            gösteriliyor.</span>
+    </div>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <h1>UmutAğı.</h1>
+            </div>
+            <nav class="nav-links">
+                <a href="#kategoriler" class="active" data-i18n="nav-active">Aktif İlanlar</a>
+                <a href="gorevlerim.html" data-i18n="nav-tasks">Üstlendiğim Görevler</a>
+                <a href="#iletisim" data-i18n="nav-contact">İletişim</a>
+                <div class="nav-actions" style="display: flex; gap: 10px;">
+                    <button id="lang-toggle" class="btn-theme lang-btn" title="Dili Değiştir">EN</button>
+                    <button id="theme-toggle" class="btn-theme" title="Temayı Değiştir"></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero"
+            style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('foto1.jpg');">
+            <div class="container hero-content">
+                <h2 data-i18n="hero-title">Kriz Anında Hızlı ve Etkili Koordinasyon</h2>
+                <p data-i18n="hero-desc">Doğru yardımı, doğru zamanda, doğru yere ulaştırın.</p>
+            </div>
+        </section>
+
+        <section class="info-section container">
+            <div class="info-content">
+                <h3 data-i18n="info-title">Neden Buradayız?</h3>
+                <p data-i18n="info-desc">Afet anlarında en büyük düşmanımız koordinasyonsuzluktur. Bu platform, yardım
+                    taleplerini tek merkezde toplayarak gönüllülerin en hızlı şekilde aksiyon almasını sağlar.</p>
+            </div>
+            <img src="foto2.jpeg" alt="Yıkım Alanı" class="info-image">
+        </section>
+
+        <section id="kategoriler" class="container">
+            <div class="filter-section">
+                <h3 data-i18n="cat-title">Kategoriler</h3>
+                <div id="category-buttons" class="category-buttons"></div>
+            </div>
+
+            <div id="requests-grid" class="grid-container">
+                <div class="loading" data-i18n="loading">Sistem verileri güncelliyor...</div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="iletisim" class="footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <div class="footer-logo">UmutAğı.</div>
+                <p data-i18n="footer-about">Afet ve kriz anlarında sivil inisiyatifi ve gönüllüleri tek bir dijital
+                    merkezde buluşturarak, yardımların en hızlı ve doğru şekilde ulaşmasını sağlayan açık kaynaklı
+                    koordinasyon ağı.</p>
+            </div>
+
+            <div class="footer-links-col">
+                <h4 data-i18n="footer-quick">Hızlı Erişim</h4>
+                <a href="#kategoriler" data-i18n="nav-active">Aktif İlanlar</a>
+                <a href="gorevlerim.html" data-i18n="nav-tasks">Üstlendiğim Görevler</a>
+            </div>
+
+            <div class="footer-contact">
+                <h4 data-i18n="footer-contact-title">İletişim & Önemli Numaralar</h4>
+                <p><strong>AFAD Koordinasyon:</strong> 122</p>
+                <p><strong>Acil Çağrı Merkezi:</strong> 112</p>
+                <p><strong>Sistem Desteği:</strong> destek@umutagi.org</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container" data-i18n="footer-copy">
+                &copy; 2026 UmutAğı Platformu. Tüm hakları saklıdır. Kriz anlarında kesintisiz iletişim için
+                tasarlanmıştır.
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast-container" class="toast-container"></div>
+
+    <div id="task-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h3 data-i18n="modal-title">Görevi Üstlen</h3>
+            <p data-i18n="modal-desc">Sahadaki koordinasyon için lütfen iletişim bilgilerinizi giriniz.</p>
+            <div class="form-group">
+                <label for="volunteer-name" data-i18n="modal-name">Adınız Soyadınız</label>
+                <input type="text" id="volunteer-name" placeholder="Örn: Ahmet Yılmaz" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="volunteer-phone" data-i18n="modal-phone">Telefon Numaranız</label>
+                <input type="tel" id="volunteer-phone" placeholder="Örn: 0555 123 4567" autocomplete="off">
+            </div>
+            <div class="modal-actions">
+                <button class="btn-action btn-remove" onclick="closeModal()" data-i18n="modal-cancel">İptal</button>
+                <button class="btn-action" onclick="confirmTask()" data-i18n="modal-confirm">Onayla ve Üstlen</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="i18n.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
