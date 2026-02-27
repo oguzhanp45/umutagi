@@ -22,7 +22,7 @@ Kriz anlarındaki en büyük sorunlar olan **şebeke kesintileri** ve **bilgi ki
 ## ⚙️ Kurulum ve Çalıştırma
 
 Projede herhangi bir derleyici (Webpack, Babel vb.) veya kütüphane/framework kullanılmamıştır. Tamamen Vanilla JS ile "Clean Code" prensiplerine uygun yazılmıştır.
-1.Pages link :https://oguzhanp45.github.io/umutagi/ 
+Pages link :https://oguzhanp45.github.io/umutagi/ 
  . Bu depoyu bilgisayarınıza klonlayın:
    ```bash
    git clone [https://github.com/oguzhanp45/umutagi.git](https://github.com/oguzhanp45/umutagi.git)
